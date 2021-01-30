@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <!-- <jsplump /> -->
+    <wangeditor />
     <!-- <simditor /> -->
 
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
@@ -11,6 +12,7 @@
 <script>
 import HelloWorld from './components/HelloWorld.vue'
 import jsplump from './components/jsplump.vue'
+import wangeditor from './components/editorExample/wangeditor'
 import simditor from './components/editorExample/simditor'
 
 export default {
@@ -18,6 +20,7 @@ export default {
   components: {
     HelloWorld,
     jsplump,
+    wangeditor,
     simditor,
   }
 }
