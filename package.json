@@ -9,9 +9,14 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@ckeditor/ckeditor5-build-classic": "^25.0.0",
     "core-js": "^2.6.5",
     "jsplumb": "^2.14.6",
-    "vue": "^2.6.10"
+    "sass": "^1.32.5",
+    "sass-loader": "^10.1.1",
+    "simditor": "^2.3.28",
+    "vue": "^2.6.10",
+    "wangeditor": "^4.6.5"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.11.0",

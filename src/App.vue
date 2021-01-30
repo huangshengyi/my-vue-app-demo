@@ -1,20 +1,24 @@
 <template>
   <div id="app">
-    <jsplump />
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <!-- <jsplump /> -->
+    <!-- <simditor /> -->
+
+    <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
+    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
 import jsplump from './components/jsplump.vue'
+import simditor from './components/editorExample/simditor'
 
 export default {
   name: 'app',
   components: {
     HelloWorld,
-    jsplump
+    jsplump,
+    simditor,
   }
 }
 </script>
