@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="wangeditor-container">
     <h3>wangeditor富文本编辑器</h3>
     <!-- <div ref="editor" class="my-text-edit" @click="handleGetCurSortPosition"></div> -->
     <div ref="editor" class="my-text-edit"></div>
@@ -30,7 +30,7 @@ export default {
   mounted() {
     document.title = 'wangeditor富文本编辑器'
     this.setEditor()
-    this.editor.txt.html(this.value)
+    this.editor.txt.html(this.editorText)
   },
   methods: {
     handleGetCurSortPosition(e) {
@@ -39,7 +39,6 @@ export default {
     },
     handleSelectedText(text) {
       let insertContent = `<span style="color: red">{{我是变量${text}}}</span>`
-      // this.editor.txt.append(insertContent)
       this.editor.cmd.do('insertHTML', insertContent)
       let htmlText = this.editor.txt.html()
       let newContent = htmlText.replace(new RegExp(`(.*)@(<span style="(.*)">{{我是变量${text}}}<\/span>)(.*)`, 'g'), '$1$2$4')
@@ -70,15 +69,20 @@ export default {
         'italic', // 斜体
         'underline', // 下划线
         'strikeThrough', // 删除线
+        'indent', // 缩进
+        'lineHeight', // 行高
         'foreColor', // 文字颜色
         'backColor', // 背景颜色
         'link', // 插入链接
         'list', // 列表
         'justify', // 对齐方式
         'quote', // 引用
-        'emoticon', // 表情
+        // 'emoticon', // 表情
         'image', // 插入图片
+        'video', // 视频
         'table', // 表格
+        'code', // 代码区
+        'splitLine', // 分割线
         'undo', // 撤销
         'redo', // 重复
         'fullscreen' // 全屏
@@ -157,6 +161,10 @@ export default {
 </script>
 
 <style lang="scss">
+.wangeditor-container {
+  .my-text-edit {
+    text-align: left;
+  }
   .modal-selected-filter {
     position: fixed;
     top: 30px;
@@ -172,4 +180,5 @@ export default {
       color: brown;
     }
   }
+}
 </style>
