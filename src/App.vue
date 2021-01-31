@@ -1,38 +1,69 @@
 <template>
   <div id="app">
     <!-- <jsplump /> -->
-    <wangeditor />
+    <!-- <wangeditor /> -->
     <!-- <simditor /> -->
 
-    <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
+    <ul class="nav-list">
+      <router-link tag="li" class="item" :to="item.path"
+        v-for="(item, index) of navList" :key="index"
+      >{{item.name}}</router-link>
+    </ul>
+
+    <router-view />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-import jsplump from './components/jsplump.vue'
-import wangeditor from './components/editorExample/wangeditor'
-import simditor from './components/editorExample/simditor'
 
 export default {
   name: 'app',
-  components: {
-    HelloWorld,
-    jsplump,
-    wangeditor,
-    simditor,
+  data() {
+    return {
+      navList: [
+        { name: '首页', path: '/' },
+        { name: 'wangeditor富文本编辑器', path: '/editor/wangeditor' },
+        { name: 'simditor富文本编辑器', path: '/editor/simditor' },
+        { name: 'ckeditor5-build-classic富文本编辑器', path: '/editor/ckeditor5BuildClassic' },
+        { name: 'jsplump流程图', path: '/flowChart/jsplump' },
+      ]
+    }
   }
 }
 </script>
 
-<style>
+<style lang="scss">
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  ul,li {
+    list-style: none;
+  }
+
+  .nav-list {
+    margin-bottom: 15px;
+    padding-bottom: 20px;
+    overflow: hidden;
+    border-bottom: 1px solid rgb(202, 198, 198);
+    .item {
+      float: left;
+      padding: 5px 10px;
+      margin: 0 5px 8px 0;
+      font-size: 15px;
+      border-radius: 5px;
+      color: rgb(37, 166, 218);
+      cursor: pointer;
+      background: #ddd;
+      &:nth-last-child(1) {
+        margin-right: 0;
+      }
+      &:hover {
+        background: #2c3e50;
+      }
+    }
+  }
 }
 </style>

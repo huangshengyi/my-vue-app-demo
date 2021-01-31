@@ -1,6 +1,5 @@
 <template>
   <div class="wangeditor-container">
-    <h3>wangeditor富文本编辑器</h3>
     <!-- <div ref="editor" class="my-text-edit" @click="handleGetCurSortPosition"></div> -->
     <div ref="editor" class="my-text-edit"></div>
 
@@ -160,7 +159,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .wangeditor-container {
   .my-text-edit {
     text-align: left;

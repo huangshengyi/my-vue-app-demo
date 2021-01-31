@@ -16,6 +16,7 @@
     "sass-loader": "^10.1.1",
     "simditor": "^2.3.28",
     "vue": "^2.6.10",
+    "vue-router": "^3.5.1",
     "wangeditor": "^4.6.5"
   },
   "devDependencies": {

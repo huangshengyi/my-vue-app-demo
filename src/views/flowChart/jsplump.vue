@@ -1,6 +1,5 @@
 <template>
-  <div>
-    <h3>流程图实现：</h3>
+  <div class="jsplump-wrapper">
     <div id="diagramContainer">
       <div id="item_left" class="item">1</div>
       <div id="item_right" class="item" style="left: 300px; top: 100px">2</div>
@@ -14,7 +13,7 @@ const firstInstance = jsPlumb.getInstance()
 
 export default {
   mounted() {
-    console.log('打印依赖：', jsPlumb)
+    document.title = 'jsplump流程图'
     this.init()
   },
   methods: {
@@ -105,21 +104,23 @@ export default {
 }
 </script>
 
-<style>
-#diagramContainer {
-  position: relative;
-  padding: 20px;
-  width: 80%;
-  height: 400px;
-  border: 1px solid gray;
-}
-.item {
-  position: absolute;
-  width: 100px;
-  background: green;
-  text-align: center;
-  line-height: 100px;
-  color: white;
-  height: 100px;
+<style lang="scss" scoped>
+.jsplump-wrapper {
+  #diagramContainer {
+    position: relative;
+    padding: 20px;
+    width: 80%;
+    height: 400px;
+    border: 1px solid gray;
+  }
+  .item {
+    position: absolute;
+    width: 100px;
+    background: green;
+    text-align: center;
+    line-height: 100px;
+    color: white;
+    height: 100px;
+  }
 }
 </style>
