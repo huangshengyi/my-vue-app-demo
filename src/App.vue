@@ -1,13 +1,11 @@
 <template>
   <div id="app">
-    <!-- <jsplump /> -->
-    <!-- <wangeditor /> -->
-    <!-- <simditor /> -->
-
     <ul class="nav-list">
-      <router-link tag="li" class="item" :to="item.path"
+      <router-link class="item" :to="{path: item.path}" custom v-slot="{ navigate }"
         v-for="(item, index) of navList" :key="index"
-      >{{item.name}}</router-link>
+      >
+        <li @click="navigate" @keypress.enter="navigate" role="link">{{item.name}}</li>
+      </router-link>
     </ul>
 
     <router-view />

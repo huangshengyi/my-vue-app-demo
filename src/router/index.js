@@ -23,10 +23,6 @@ export const routerMap = [
     component: Editor,
     children: [
       {
-        path: '/',
-        redirect: 'wangeditor',
-      },
-      {
         path: 'wangeditor',
         name: 'wangeditor',
         component: Wangeditor,
@@ -48,10 +44,6 @@ export const routerMap = [
     name: 'flowChart',
     component: FlowChart,
     children: [
-      {
-        path: '/',
-        redirect: 'jsplump',
-      },
       {
         path: 'jsplump',
         name: 'jsplump',
